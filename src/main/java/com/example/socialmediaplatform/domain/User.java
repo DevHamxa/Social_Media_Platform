@@ -42,10 +42,12 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Post> posts;
 
-    /*@OneToMany(mappedBy = "follower", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<User> following = new HashSet<>();
-
+    // One user can have many followers (reverse of the Follow relation)
     @OneToMany(mappedBy = "followed", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<User> followers = new HashSet<>();*/
+    private List<Follow> followers;
+
+    // One user can be following many users (forward of the Follow relation)
+    @OneToMany(mappedBy = "follower", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Follow> following;
 
 }

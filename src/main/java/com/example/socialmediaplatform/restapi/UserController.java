@@ -1,6 +1,7 @@
 package com.example.socialmediaplatform.restapi;
 
 import com.example.socialmediaplatform.domain.User;
+import com.example.socialmediaplatform.model.UserModel;
 import com.example.socialmediaplatform.service.UserService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +19,8 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping(value="/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> getUser(@PathVariable(value="id") Long id) {
-        return ResponseEntity.ok(userService.getUser(id));
+    public ResponseEntity<UserModel> getUser(@PathVariable(value="id") Long id) {
+        return ResponseEntity.ok(new UserModel(userService.getUser(id)));
     }
 
 
