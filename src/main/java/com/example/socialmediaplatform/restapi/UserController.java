@@ -26,6 +26,12 @@ public class UserController {
         return ResponseEntity.ok(new UserModel(userService.getUser(id)));
     }
 
+    @PostMapping("/signup")
+    public ResponseEntity<UserModel> signup(@RequestParam String email,
+                                            @RequestParam String password) {
+        return ResponseEntity.ok(new UserModel(userService.registerUser(email, password)));
+    }
+
     // Register a new user
     /*@PostMapping(value = "/register", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserModel> registerUser(@RequestBody UserRegisterRequest request) {
