@@ -42,16 +42,20 @@ public class SecurityConfig {
                         .ignoringRequestMatchers("/api/auth/login", "/users/signup") // Disable CSRF for the login API endpoint
                 )
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/blog/**", "/api/auth/login", "/users/signup").permitAll() // Allow public access to blog
+                        .requestMatchers("/blog/**", "/api/auth/login", "/users/signup", "/api/auth/user-details").permitAll() // Allow public access to blog
                         .anyRequest().authenticated() // Require authentication for other requests
                 )
                 .formLogin(formLogin -> formLogin
                         .loginPage("/api/auth/login") // Ensure this is correctly set
                         .failureUrl("/api/auth/login?error")
                         .permitAll()
-                        //.defaultSuccessUrl("/users/1", true) // Specify where to redirect after successful login
+                        .defaultSuccessUrl("/api/auth/user-details", true) // Specify where to redirect after successful login
                 )
-                .rememberMe(Customizer.withDefaults());
+                .rememberMe(rememberMe -> rememberMe
+                        .key("uniqueAndSecretKey") // Set a unique key for token generation
+                        .tokenValiditySeconds(86400) // Valid for one day
+                        .userDetailsService(userDetailsService) // Provide the UserDetailsService
+                );
 
         return http.build();
     }

@@ -11,5 +11,7 @@ public interface UserService {
 
     User registerUser(String email, String password);
 
+    User getUserByEmail(String email);
+
     //List getFollowers(Long id);
 }

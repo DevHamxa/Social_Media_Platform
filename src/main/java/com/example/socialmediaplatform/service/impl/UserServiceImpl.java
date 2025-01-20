@@ -33,6 +33,10 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
     public User registerUser(String email, String password) {
         // Check if the username already exists
         User oldUser = userRepository.findByEmail(email);
