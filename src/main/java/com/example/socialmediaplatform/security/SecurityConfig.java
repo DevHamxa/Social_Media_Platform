@@ -42,7 +42,7 @@ public class SecurityConfig {
                         .ignoringRequestMatchers("/api/auth/login", "/users/signup") // Disable CSRF for the login API endpoint
                 )
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/blog/**", "/api/auth/login", "/users/signup", "/api/auth/user-details").permitAll() // Allow public access to blog
+                        .requestMatchers("/posts/all", "/api/auth/login", "/users/signup", "/api/auth/user-details").permitAll() // Allow public access to blog
                         .anyRequest().authenticated() // Require authentication for other requests
                 )
                 .formLogin(formLogin -> formLogin
