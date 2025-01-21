@@ -119,9 +119,10 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `profile_picture` longblob,
   `bio_description` text,
+  `roles` varchar(255) NOT NULL DEFAULT 'USER',
   PRIMARY KEY (`web_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +131,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'john_doe','john.doe@example.com','password123',NULL,'Tech enthusiast and nature lover.'),(2,'jane_smith','jane.smith@example.com','$2a$10$IjAwm5JUqNNKVr2hr48QnO4/L/o0JQLg/oXNZXv1U6ap1PsDXzy8O',NULL,'Software developer with a love for coffee.'),(3,'alex_williams','alex.williams@example.com','$2a$10$IjAwm5JUqNNKVr2hr48QnO4/L/o0JQLg/oXNZXv1U6ap1PsDXzy8O',NULL,'Traveler, foodie, and photographer.'),(10,NULL,'mhamzafayyaz23@gmail.com','$2a$10$IjAwm5JUqNNKVr2hr48QnO4/L/o0JQLg/oXNZXv1U6ap1PsDXzy8O',NULL,NULL);
+INSERT INTO `users` VALUES (1,'john_doe','john.doe@example.com','password123',NULL,'Tech enthusiast and nature lover.','USER'),(2,'jane_smith','jane.smith@example.com','$2a$10$IjAwm5JUqNNKVr2hr48QnO4/L/o0JQLg/oXNZXv1U6ap1PsDXzy8O',NULL,'Software developer with a love for coffee.','USER'),(3,'alex_williams','alex.williams@example.com','$2a$10$IjAwm5JUqNNKVr2hr48QnO4/L/o0JQLg/oXNZXv1U6ap1PsDXzy8O',NULL,'Traveler, foodie, and photographer.','USER'),(10,NULL,'mhamzafayyaz23@gmail.com','$2a$10$IjAwm5JUqNNKVr2hr48QnO4/L/o0JQLg/oXNZXv1U6ap1PsDXzy8O',NULL,NULL,'USER'),(11,NULL,'Alidoe@example.com','$2a$10$4r/HL.zh1a8UdhAwhZ8k6.74LAXjse4Yd9dWrGIaXy.KliFp0fz8u',NULL,NULL,'USER'),(13,NULL,'Alidoe1@example.com','$2a$10$0ZZQevHv2m4ZkT18D0/G2eXuD4TJY.cW4./U6/5s5bu8fPlQhdZ8.',NULL,NULL,'USER'),(14,NULL,'Alidoe2@example.com','$2a$10$PxGqRVDQUILq4wWLn.ijaeVLzJYyABQNYOG8VimA/cshCxBNg6Lq.',NULL,NULL,'USER'),(15,NULL,'Alidoe3@example.com','$2a$10$cEElfYND9V5e5QuKAWZj6eBTCNNznyeUi.H6J20Ic91UpATT0iara',NULL,NULL,'USER'),(16,NULL,'Alidoe4@example.com','$2a$10$3hg7TgJXS34LsKuLJysCeewoJSKsofRTFFL6Qw2S9fLZMI5kmmktC',NULL,NULL,'USER'),(17,NULL,'Alidoe5@example.com','$2a$10$HvbLPXEpUGbOklObMXV/K.apU/2V.ABf.Ikr4WECsgNvODBQiaKLO',NULL,NULL,'USER');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -143,4 +144,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-20 17:36:52
+-- Dump completed on 2025-01-22  2:28:17
