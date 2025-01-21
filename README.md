@@ -110,7 +110,7 @@ The database schema and data for this project are provided in the `database.sql`
   
   **Endpoint**: `http://localhost:8080/follows/following?userId=2`  
   **Method**: `GET`  
-  **Description**: Allows users to get the users that are following him/her. 
+  **Description**: Allows users to get the users that are following him/her.
   **Request Header**: JWT token e.g 
   
   ```
