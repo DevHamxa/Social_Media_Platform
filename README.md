@@ -98,12 +98,12 @@ The database schema and data for this project are provided in the `database.sql`
   **Endpoint**: `http://localhost:8080/users/1`  
   **Method**: `GET`  
   **Description**: Allows users to login to there account.
+  
   **Request Header**: JWT token e.g 
  
   ```
   eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbGlkb2U0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzM3NDkzOTg2LCJleHAiOjE3Mzc1ODAzODZ9.g_yhwnUO1FfxdBDNBQoOPZ5mEficTcA6Ygaf-6c3naQ
   ```
-
   **Request Body**: null
 
   4. **Following** 
@@ -111,6 +111,7 @@ The database schema and data for this project are provided in the `database.sql`
   **Endpoint**: `http://localhost:8080/follows/following?userId=2`  
   **Method**: `GET`  
   **Description**: Allows users to get the users that are following him/her.
+  
   **Request Header**: JWT token e.g 
   
   ```
