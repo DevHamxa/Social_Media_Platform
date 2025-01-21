@@ -65,24 +65,41 @@ The database schema and data for this project are provided in the `database.sql`
 
   1. **User Signup** 
   
-  **Endpoint**: `http://localhost:8080/users/signup?email=abc123hfg@gmail.com&password=pass123`  
+  **Endpoint**: `http://localhost:8080/api/v1/auth/register`  
   **Method**: `POST`  
   **Description**: Allows users to register a new account.  
-  **Request Body**: null
+  **Request Body**: 
+  
+   ```
+   {
+        "userName": "Ali",
+        "email": "Alidoe5@example.com",
+        "password": "SecurePassword123"
+   }
+
+   ```
+
   
   2. **User Login** 
   
-  **Endpoint**: `http://localhost:8080/api/auth/login?username=abc123hfg@gmail.com&password=pass123`  
+  **Endpoint**: `http://localhost:8080/api/v1/auth/authenticate`  
   **Method**: `POST`  
   **Description**: Allows users to login to there account.  
   **Request Body**: null
+   ```
+   {
+     "email": "Alidoe5@example.com",
+     "password": "SecurePassword123"
+   }
+   ```
 
   3. **User Detail** 
   
   **Endpoint**: `http://localhost:8080/users/1`  
   **Method**: `GET`  
   **Description**: Allows users to login to there account.
-  **Request Header**: JWT token
+  **Request Header**: JWT token e.g 
+  ```eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbGlkb2U0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzM3NDkzOTg2LCJleHAiOjE3Mzc1ODAzODZ9.g_yhwnUO1FfxdBDNBQoOPZ5mEficTcA6Ygaf-6c3naQ```
   **Request Body**: null
 
   4. **Following** 
@@ -90,5 +107,6 @@ The database schema and data for this project are provided in the `database.sql`
   **Endpoint**: `http://localhost:8080/follows/following?userId=2`  
   **Method**: `GET`  
   **Description**: Allows users to get the users that are following him/her. 
-  **Request Header**: JWT token
+  **Request Header**: JWT token  e.g 
+  ```eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbGlkb2U0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzM3NDkzOTg2LCJleHAiOjE3Mzc1ODAzODZ9.g_yhwnUO1FfxdBDNBQoOPZ5mEficTcA6Ygaf-6c3naQ```
   **Request Body**: null
