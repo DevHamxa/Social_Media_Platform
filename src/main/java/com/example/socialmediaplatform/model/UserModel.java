@@ -29,7 +29,7 @@ public class UserModel {
 
     public UserModel(User user) {
         this.webId = user.getWebId();
-        this.userName = user.getUserName();
+        this.userName = user.getName();
         this.password = user.getPassword();
         this.email = user.getEmail();
         this.profilePicture = user.getProfilePicture();

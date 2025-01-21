@@ -20,7 +20,7 @@ public class GlobalExceptionHandler {
         if (ex instanceof ResourceNotFoundException) {
             error = new ApiError(HttpStatus.NOT_FOUND, "Unable to find the requested resource.", ex);
         } else if (ex instanceof ResourceAlreadyExistsException) {
-            error = new ApiError(HttpStatus.NOT_FOUND, "The Resource is Already present", ex);
+            error = new ApiError(HttpStatus.FOUND, "The Resource is Already present", ex);
         } else {
             error = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, "Unexpected error while processing.", ex);
         }
